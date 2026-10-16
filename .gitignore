@@ -1,0 +1,15 @@
+# Real passwords / keys — keep only on the server
+config/secrets.php
+
+# Uploaded by customers and riders (private)
+assets/images/customers/*
+assets/images/deliveries/*
+!assets/images/customers/.gitkeep
+!assets/images/deliveries/.gitkeep
+
+# Database exports, backups, OS junk
+*.sql.zip
+*_backup.sql
+*.bak
+.DS_Store
+Thumbs.db

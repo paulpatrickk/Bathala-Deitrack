@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeiTrack: Bathala Tissue</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!-- YOUR CSS -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#00a8c6">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DeiTrack">
+
+
+
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <img src="/src/logo.png" alt="Logo" height="40">
+            DeiTrack: Bathala Tissue
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary pwa-install-btn me-2" style="display:none;" onclick="triggerPwaInstall()">
+                        <i class="bi bi-download"></i> Install App
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-main ms-3" href="#" onclick="document.getElementById('loginModal').classList.add('show')">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- LOGIN CHOICE MODAL -->
+<div class="login-modal-overlay" id="loginModal">
+    <div class="login-modal-box">
+        <button class="login-modal-close" onclick="document.getElementById('loginModal').classList.remove('show')">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="login-modal-header">
+            <img src="/src/logo.png" height="40">
+            <h4>Welcome to DeiTrack</h4>
+            <p>Choose how you want to continue</p>
+        </div>
+
+        <div class="login-modal-options">
+            <a href="customer_login.php" class="login-option-card">
+                <div class="login-option-icon" style="background:linear-gradient(135deg,#00a8c6,#0064ff)">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div>
+                    <div class="login-option-title">Customer</div>
+                    <div class="login-option-desc">Order products online, track your deliveries</div>
+                </div>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+
+            <a href="login.php" class="login-option-card">
+                <div class="login-option-icon" style="background:linear-gradient(135deg,#6f42c1,#0064ff)">
+                    <i class="bi bi-buildings-fill"></i>
+                </div>
+                <div>
+                    <div class="login-option-title">Staff / Team</div>
+                    <div class="login-option-desc">Staff, Warehouse, Rider, Admin access</div>
+                </div>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-bg-rolls" id="rollLayer"></div>
+    <h1>
+        Integrated Inventory & <br>
+        <span class="highlight">GPS Delivery Management</span>
+    </h1>
+
+    <p class="mt-3">
+        Streamline your tissue and paper product supply chain with real-time tracking,
+        inventory management, and delivery monitoring.
+    </p>
+
+    <div class="mt-4">
+        <a href="#" class="btn btn-main me-2" onclick="document.getElementById('loginModal').classList.add('show')">Get Started</a>
+        <a href="#features" class="btn btn-outline-secondary">Learn More</a>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M0,60 C300,110 900,10 1200,60 L1200,120 L0,120 Z" fill="rgba(0, 168, 198, 0.7)"/>
+  <path d="M0,80 C400,30 800,100 1200,50 L1200,120 L0,120 Z" fill="rgba(0, 168, 198, 0.5)"/>
+</svg>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+    <div class="container text-center">
+        <h2 class="features-title">Powerful Features</h2>
+        <p class="features-subtitle">
+            Everything you need to manage your supply chain efficiently
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-3 fade-in">
+                <div class="feature-card text-start">
+                    <div class="feature-icon icon-1">
+                        <i class="bi bi-box"></i>
+                    </div>
+                    <h6>Inventory Management</h6>
+                    <div class="feature-list">
+                        <div><i class="bi bi-check2"></i> Add, edit, update products</div>
+                        <div><i class="bi bi-check2"></i> Automatic stock updates</div>
+                        <div><i class="bi bi-check2"></i> Low stock alerts</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 fade-in">
+                <div class="feature-card text-start">
+                    <div class="feature-icon icon-2">
+                        <i class="bi bi-cart"></i>
+                    </div>
+                    <h6>Order Tracking</h6>
+                    <div class="feature-list">
+                        <div><i class="bi bi-check2"></i> Real-time monitoring</div>
+                        <div><i class="bi bi-check2"></i> Status updates</div>
+                        <div><i class="bi bi-check2"></i> Order history</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 fade-in">
+                <div class="feature-card text-start">
+                    <div class="feature-icon icon-3">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h6>GPS Delivery Monitoring</h6>
+                    <div class="feature-list">
+                        <div><i class="bi bi-check2"></i> Live rider location</div>
+                        <div><i class="bi bi-check2"></i> Delivery assignment</div>
+                        <div><i class="bi bi-check2"></i> Real-time updates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 fade-in">
+                <div class="feature-card text-start">
+                    <div class="feature-icon icon-4">
+                        <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <h6>Reports & Analytics</h6>
+                    <div class="feature-list">
+                        <div><i class="bi bi-check2"></i> Sales reports</div>
+                        <div><i class="bi bi-check2"></i> Inventory reports</div>
+                        <div><i class="bi bi-check2"></i> Analytics</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+                <!-- PRODUCTS -->
+                <section id="products" class="features">
+                    <div class="container text-center">
+                        <h2 class="features-title">Our Products</h2>
+                        <p class="features-subtitle">
+                            Premium quality tissue and paper products for your everyday needs
+                        </p>
+
+                        <div class="row g-4">
+
+                            <!-- BATHROOM TISSUE -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start"> 
+                        <img src="assets/images/products/product_1_1777569909.png" class="product-img" alt="Bathroom Tissue">
+                        <h6>Bathroom Tissue</h6>
+                        <p class="text-muted small">48 rolls per case. Available in 150 pulls 2ply (Virgin Pulp) and 150 pulls 3ply (Virgin Pulp) variants.</p>
+                    </div>
+                </div>
+
+                <!-- INTERLEAVED TISSUE -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_3_1777569936.png" class="product-img" alt="Interleaved Tissue">
+                        <h6>Interleaved Tissue</h6>
+                        <p class="text-muted small">Pop-up interleave, 96 packs per case / 100 sheets. Made from Virgin Pulp.</p>
+                    </div>
+                </div>
+
+                <!-- FACIAL TISSUE -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_4_1777569951.png" class="product-img" alt="Facial Tissue">
+                        <h6>Facial Tissue</h6>
+                        <p class="text-muted small">72 mini boxes per box. Available in 40 pulls 2ply and 60 pulls 2ply variants. Made from Virgin Pulp.</p>
+                    </div>
+                </div>
+
+                <!-- HAND ROLL TISSUE -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_6_1777569995.png" class="product-img" alt="Hand Roll Tissue">
+                        <h6>Hand Roll Tissue</h6>
+                        <p class="text-muted small">Handroll tissue, 6 rolls per box / 200 meters per roll. Made from Virgin Pulp.</p>
+                    </div>
+                </div>
+
+                <!-- JUMBO ROLL TISSUE -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_7_1777570039.png" class="product-img" alt="Jumbo Roll Tissue">
+                        <h6>Jumbo Roll Tissue</h6>
+                        <p class="text-muted small">16 rolls per box. Available in 200 meters Virgin Pulp and 150 meters CPREM variants.</p>
+                    </div>
+                </div>
+
+                <!-- KITCHEN TOWEL ROLL -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_9_1777570065.png" class="product-img" alt="Kitchen Towel Roll Tissue">
+                        <h6>Kitchen Towel Roll Tissue</h6>
+                        <p class="text-muted small">24–25 rolls per case / 85 pulls 2ply. Available in Regular and Jumbo sizes. Made from Virgin Pulp.</p>
+                    </div>
+                </div>
+
+                <!-- INTERFOLDED PAPER TOWEL -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_11_1777570086.png" class="product-img" alt="Interfolded Paper Towel">
+                        <h6>Interfolded Paper Towel</h6>
+                        <p class="text-muted small">30 packs per box / 150 pulls 1ply. Available in Brown and White (Virgin Pulp) variants.</p>
+                    </div>
+                </div>
+
+                <!-- QUATRO FOLDED -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_13_1777570097.png" class="product-img" alt="Table Napkin Quatrofolded">
+                        <h6>Table Napkin Quatrofolded</h6>
+                        <p class="text-muted small">8 packs per case / 350 sheets 1ply. Available in Virgin Pulp and Brown variants.</p>
+                    </div>
+                </div>
+
+                <!-- PRE-CUT -->
+                <div class="col-md-4 fade-in">
+                    <div class="feature-card text-start">
+                        <img src="assets/images/products/product_15_1777570092.png" class="product-img" alt="Pre-Cut Tissue">
+                        <h6>Pre-Cut Tissue</h6>
+                        <p class="text-muted small">Pre-cut white, 5 packs per case / 1000 sheets 1ply. Made from Pure Pulp.</p>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <div class="container text-center">
+        <h2 class="about-title">About Bathala Tissue Supplier</h2>
+
+        <p class="about-text mt-3">
+            Operating in Quezon City and Bulacan, Bathala Tissue Supplier is committed to providing high-quality tissue and paper products to businesses and individuals. Through digital transformation and our integrated inventory and GPS-based delivery management system, we ensure efficient operations, real-time tracking, and exceptional customer service. Our platform empowers our team to manage inventory seamlessly, track deliveries in real-time, and make data-driven decisions to better serve our customers.
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<section id="Contact" class="Contact">
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <!-- LEFT -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="footer-title">
+                        <i class="bi bi-box"></i> Bathala Tissue Supplier
+                    </h6>
+                    <p class="footer-text">
+                        Your trusted partner for tissue and paper products in Quezon City and Bulacan.
+                    </p>
+                </div>
+
+                <!-- CENTER -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="footer-title">Contact Information</h6>
+                    <p class="footer-text">Email: info@bathalatissue.com</p>
+                    <p class="footer-text">Phone: (02) 1234-5678</p>
+                    <p class="footer-text">Quezon City & Bulacan</p>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <p><a href="#" class="footer-link">Home</a></p>
+                    <p><a href="#features" class="footer-link">Features</a></p>
+                    <p><a href="#products" class="footer-link">Products</a></p>
+                    <p><a href="login.php" class="footer-link">Login</a></p>
+                </div>
+
+            </div>
+
+            <!-- LINE -->
+            <div class="footer-divider"></div>
+
+            <!-- COPYRIGHT -->
+            <p class="text-center footer-copy">
+                © 2026 Bathala Tissue Supplier. All rights reserved.
+            </p>
+
+            <p class="text-center footer-copy mt-2" style="font-size: 0.8rem; opacity: 0.8;">
+                This system is developed for Capstone 1 at STI College Sta. Maria.<br>
+                <strong>Proponents:</strong> Paul Patrick M. Balbalosa, Stephon Aevron Vinze P. Flores, Kirby C. Galedo, John Harold O. Santos
+            </p>
+        </div>
+    </footer>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YOUR JS -->
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/pwa-install.js"></script>
+
+
+</body>
+</html>
+
